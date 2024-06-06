@@ -24,8 +24,10 @@ body {
 .branding {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     margin-bottom: 20px;
+    width: 100%;
+    
 }
 
 .branding .logo {
