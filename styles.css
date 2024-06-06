@@ -21,10 +21,23 @@ body {
     align-items: center;
 }
 
-h1 {
-    text-align: center;
+.branding {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.branding .logo {
+    width: 50px; /* Adjust the width as needed */
+    height: auto;
+    margin: 0 15px; /* Adjust the spacing as needed */
+}
+
+.branding h2 {
+    margin: 0;
     color: #333;
-    margin: 0.3em;
+    font-size: 2em;
 }
 
 .tabs {
@@ -66,6 +79,8 @@ h1 {
 .tab-content {
     display: none;
     width: 100%;
+    flex-grow: 1;
+    overflow-y: auto;
 }
 
 .tab-content.active {
@@ -76,16 +91,18 @@ h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 10px 0;
-    padding: 5px;
+    margin: 7px 0;
+    padding: 7px;
     background: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 4px;
 }
 
 .product-name {
-    font-size: 1.1em;
+    font-size: 1.2em;
     color: #333;
+    font-weight: bold;
+
 }
 
 .product-price {
@@ -105,7 +122,8 @@ h1 {
     border: 1px solid #ddd;
     border-radius: 4px;
     padding: 5px;
-    font-size: 1.5em;
+    font-size: 1.2
+    em;
     font-weight: bold;
 }
 
@@ -137,6 +155,12 @@ h1 {
     text-align: center;
     margin-top: 20px;
     color: #d9534f;
+    position: sticky;
+    bottom: 0;
+    background: white;
+    width: 100%;
+    padding: 10px 0;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .total h2 {
