@@ -1,0 +1,176 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tab-link {
+    background: #1e3d59;
+    border: none;
+    padding: 15px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    color: white;
+    transition: background 0.3s;
+    flex: 1;
+    font-size: 1.5em;    
+}
+
+.tab-link:hover {
+    background: #162a40;
+}
+
+.tab-link-comida {
+    background: #d9534f;
+}
+
+.tab-link-comida:hover {
+    background: #b52b27;
+}
+
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.product {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.product-name {
+    font-size: 1.1em;
+    color: #333;
+}
+
+.product-price {
+    font-size: 0.9em;
+    color: #555;
+}
+
+.product-controls {
+    display: flex;
+    align-items: center;
+}
+
+.product-controls input {
+    width: 60px;
+    text-align: center;
+    margin: 0 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    font-size: 1em;
+}
+
+.product-controls button {
+    background: #1e3d59;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s;
+    font-size: 1em;
+    min-width: 40px;
+}
+
+.product-controls button:hover {
+    background: #162a40;
+}
+
+.product-controls .button-comida {
+    background: #d9534f;
+}
+
+.product-controls .button-comida:hover {
+    background: #b52b27;
+}
+
+.total {
+    text-align: center;
+    margin-top: 20px;
+    color: #d9534f;
+}
+
+.total h2 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+#reset-button {
+    background: #d9534f;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s;
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+#reset-button:hover {
+    background: #b52b27;
+}
+
+/* @media (max-width: 600px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+    
+    .product-controls input {
+        width: 40px;
+        margin: 0 5px;
+        padding: 3px;
+        font-size: 0.9em;
+    }
+    
+    .product-controls button {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+    
+    .tab-link {
+        padding: 15px;
+        font-size: 0.9em;
+    }
+    
+} */

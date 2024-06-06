@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parral 2024</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" type="image/x-icon" href="logo.jpg" />
+</head>
+<body>
+    <div class="container">
+        <h1>Peña El Crucero</h1>
+        <div class="tabs">
+            <button class="tab-link tab-link-comida" onclick="openTab('comida')">COMIDA</button>
+            <button class="tab-link tab-link-bebida" onclick="openTab('bebida')">BEBIDA</button>
+        </div>
+        <div id="comida" class="tab-content">
+            <!-- Productos de comida -->
+        </div>
+        <div id="bebida" class="tab-content" style="display: none;">
+            <!-- Productos de bebida -->
+        </div>
+        <div class="total">
+            <h2>Total: <span id="total-amount">0.00€</span></h2>
+            <button id="reset-button" onclick="resetQuantities()">Borrar</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
