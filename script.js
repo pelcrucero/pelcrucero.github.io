@@ -9,7 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
             { name: 'Patatas / Chaskis', price: 1, quantity: 0 }
         ],
         bebida: [
-            { name: 'Caña / Cali', price: 1.3, quantity: 0 },
+            { name: 'Caña / Caña con Limón', price: 1.3, quantity: 0 },
+            { name: 'Calimocho', price: 1.3, quantity: 0 },
             { name: 'Vino', price: 1.3, quantity: 0 },
             { name: 'Cachi', price: 4.5, quantity: 0 },
             { name: 'Refresco', price: 1.7, quantity: 0 },
@@ -31,9 +32,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     <span class="product-price">${product.price.toFixed(2)}€</span>
                 </div>
                 <div class="product-controls">
-                    <button class="${category === 'comida' ? 'button-comida' : ''}" onclick="updateQuantity('${category}', ${index}, -1)">-</button>
+                    <button class="${product.quantity > 0 ? 'button-nonzero' : 'button-zero'}" onclick="updateQuantity('${category}', ${index}, -1)">-</button>
                     <input type="number" value="${product.quantity}" onchange="setQuantity('${category}', ${index}, this.value)">
-                    <button class="${category === 'comida' ? 'button-comida' : ''}" onclick="updateQuantity('${category}', ${index}, 1)">+</button>
+                    <button class="${product.quantity > 0 ? 'button-nonzero' : 'button-zero'}" onclick="updateQuantity('${category}', ${index}, 1)">+</button>
                 </div>
             `;
             container.appendChild(productElement);
@@ -62,6 +63,10 @@ document.addEventListener('DOMContentLoaded', () => {
             tab.style.display = 'none';
         });
         document.getElementById(category).style.display = 'block';
+        document.querySelectorAll('.tab-link').forEach(button => {
+            button.classList.remove('tab-selected');
+        });
+        document.querySelector(`.tab-link-${category}`).classList.add('tab-selected');
         renderProducts(category);
     }
 
