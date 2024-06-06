@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
             { name: 'Patatas / Chaskis', price: 1, quantity: 0 }
         ],
         bebida: [
-            { name: 'Caña/Con Limón/Cali', price: 1.3, quantity: 0 },
+            { name: 'Caña/Con Limón', price: 1.3, quantity: 0 },
             { name: 'Vino', price: 1.3, quantity: 0 },
             { name: 'Cachi', price: 4.5, quantity: 0 },
             { name: 'Refresco', price: 1.7, quantity: 0 },
