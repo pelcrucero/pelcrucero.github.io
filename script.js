@@ -77,13 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
         document.getElementById('total-amount').textContent = total.toFixed(2) + '€';
-        const totalAmountBottom = document.getElementById('total-amount');
-        if (totalAmountBottom) {
-            totalAmountBottom.textContent = total.toFixed(2) + '€';
-        }
-        if(document.getElementById('payment-input').value != ""){
-            calculateChange();
-        }
     }
 
     window.resetQuantities = function() {
@@ -93,23 +86,8 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
         renderProducts(document.querySelector('.tab-content:not([style*="display: none"])').id);
-        document.getElementById('payment-input').value="";
         updateTotal();
-        calculateChange();
     }
-
-    window.calculateChange = function() {
-        const totalAmountElement = document.getElementById('total-amount');
-        const totalAmount = totalAmountElement ? parseFloat(totalAmountElement.textContent.replace('€', '')) : 0;
-        const paymentInput = document.getElementById('payment-input').value.replace(',', '.');
-        const paymentAmount = parseFloat(paymentInput) || 0;
-        const change = paymentAmount - totalAmount;
-        document.getElementById('change-amount').textContent = change.toFixed(2) + '€';
-    }
-
-    document.getElementById('payment-input').addEventListener('input', function() {
-        this.value = this.value.replace(/[^0-9.,]/g, '');
-    });
 
     openTab('comida');
 });

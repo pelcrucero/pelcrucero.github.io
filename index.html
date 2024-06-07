@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parral 2024</title>
+    <title>Peña El Crucero - Parral 2024</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="shortcut icon" type="image/x-icon" href="logo2.png" />
 </head>
@@ -24,23 +24,10 @@
         <div id="bebida" class="tab-content" style="display: none;">
             <!-- Productos de bebida -->
         </div>
-        <div class="payment-section">
-            <div class="payment-info">
-                <div class="payment-label total-amount" style="color: #d9534f;" >Total</div>
-                <div class="payment-amount total-amount" style="color: #d9534f;" id="total-amount">0.00€</div>
-            </div>
-            <div class="payment-info">
-                <div class="payment-label payment-amount" style="color: #1e3d59;">Pago</div>
-                <input type="text" class="payment-input payment-amount" style="color: #1e3d59;" id="payment-input" oninput="calculateChange()" pattern="[0-9]*">
-            </div>
-            <div class="payment-info">
-                <div class="payment-label change-amount" style="color: #5cb85c;">Vueltas:</div>
-                <div class="payment-amount change-amount" id="change-amount">0.00€</div>
-            </div>
+        <div class="total">
+            <h2>Total: <span id="total-amount">0.00€</span></h2>
             <button id="reset-button" onclick="resetQuantities()">Borrar</button>
         </div>
-
- 
     </div>
     <script src="script.js"></script>
 </body>
