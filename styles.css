@@ -27,13 +27,12 @@ body {
     justify-content: space-evenly;
     margin-bottom: 20px;
     width: 100%;
-    
 }
 
 .branding .logo {
-    width: 50px; /* Adjust the width as needed */
+    width: 50px;
     height: auto;
-    margin: 0 15px; /* Adjust the spacing as needed */
+    margin: 0 15px;
 }
 
 .branding h2 {
@@ -104,7 +103,6 @@ body {
     font-size: 1.2em;
     color: #333;
     font-weight: bold;
-
 }
 
 .product-price {
@@ -118,14 +116,13 @@ body {
 }
 
 .product-controls input {
-    width: 50px;
+    width: 30px;
     text-align: center;
     margin: 0 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
     padding: 5px;
-    font-size: 1.2
-    em;
+    font-size: 1.2em;
     font-weight: bold;
 }
 
@@ -184,4 +181,52 @@ body {
 
 #reset-button:hover {
     background: #b52b27;
+}
+
+.payment-section {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 0px;
+    padding: 10px;
+    /* background: #f5f5f5; */
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.payment-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: bold;
+}
+
+.payment-label {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.payment-amount, .payment-input {
+    font-size: 1.2em;
+    padding: 5px;
+    text-align: center;
+}
+
+.payment-input {
+    width: 100px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.total-amount {
+    color: #d9534f;
+}
+
+.payment-amount {
+    color: #1e3d59;
+}
+
+.change-amount {
+    color: #5cb85c;
 }
