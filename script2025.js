@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
             { name: 'Morro', price: 1.7, quantity: 0 },
             { name: 'Tortilla', price: 1.7, quantity: 0 },                        
             { name: 'Langostinos', price: 2.5, quantity: 0 },
-            // { name: 'Patatas / Chaskis', price: 1, quantity: 0 }
+            { name: 'Patatas / Chaskis', price: 1, quantity: 0 }
         ],
         bebida: [
             { name: 'Caña/Con Limón', price: 1.3, quantity: 0 },
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
             { name: 'Refresco', price: 1.7, quantity: 0 },
             { name: 'Mosto', price: 1, quantity: 0 },
             { name: 'Agua', price: 1, quantity: 0 },
-            // { name: 'Café', price: 1, quantity: 0 },
+            { name: 'Café', price: 1, quantity: 0 },
         ]
     };
 
