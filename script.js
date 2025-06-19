@@ -5,11 +5,13 @@ document.addEventListener('DOMContentLoaded', () => {
             { name: 'Chorizo', price: 1.7, quantity: 0 },
             { name: 'Morro', price: 1.7, quantity: 0 },
             { name: 'Tortilla', price: 1.7, quantity: 0 },                        
-            { name: 'Langostinos', price: 2, quantity: 0 },
+            { name: 'Langostinos', price: 2.5, quantity: 0 },
             { name: 'Patatas / Chaskis', price: 1, quantity: 0 }
         ],
         bebida: [
             { name: 'Caña/Con Limón', price: 1.3, quantity: 0 },
+            { name: 'Vaso Calimocho', price: 2, quantity: 0 },
+            { name: 'Tinto de Verano', price: 2, quantity: 0 },
             { name: 'Vino', price: 1.3, quantity: 0 },
             { name: 'Cachi', price: 4.5, quantity: 0 },
             { name: 'Refresco', price: 1.7, quantity: 0 },
