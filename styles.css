@@ -417,8 +417,9 @@ body {
     margin: 0;
 }
 
-#admin-table .adm-order { width: 48px; }
-#admin-table .adm-price { width: 68px; }
+#admin-table .adm-order { width: 36px; }
+#admin-table .adm-name  { width: 100%; }
+#admin-table .adm-price { width: 52px; }
 
 #admin-table select {
     padding: 5px;

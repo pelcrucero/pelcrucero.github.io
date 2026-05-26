@@ -171,8 +171,8 @@ document.addEventListener('DOMContentLoaded', () => {
             <td><input type="number" class="adm-price" value="${p.price}" step="0.1" min="0"></td>
             <td>
                 <select class="adm-category">
-                    <option value="comida" ${p.category === 'comida' ? 'selected' : ''}>Comida</option>
-                    <option value="bebida" ${p.category === 'bebida' ? 'selected' : ''}>Bebida</option>
+                    <option value="comida" ${p.category === 'comida' ? 'selected' : ''}>Com</option>
+                    <option value="bebida" ${p.category === 'bebida' ? 'selected' : ''}>Beb</option>
                 </select>
             </td>
             <td><button class="adm-delete" onclick="this.closest('tr').remove()">Borrar</button></td>
