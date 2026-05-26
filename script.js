@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('admin-user').value = '';
         document.getElementById('admin-pass').value = '';
         document.getElementById('admin-error').textContent = '';
-        document.getElementById('admin-gh-token').value = localStorage.getItem('pelcrucero_gh_token') || '';
+        document.getElementById('admin-gh-token').value = localStorage.getItem('pelcrucero_gh_token') || window.GH_TOKEN || '';
         setTimeout(() => document.getElementById('admin-user').focus(), 50);
     }
 
