@@ -391,7 +391,7 @@ body {
 }
 
 #admin-table td {
-    padding: 6px 6px;
+    padding: 6px 3px;
     border-bottom: 1px solid #eee;
     vertical-align: middle;
 }
@@ -417,9 +417,9 @@ body {
     margin: 0;
 }
 
-#admin-table .adm-order { width: 36px; }
-#admin-table .adm-name  { width: 100%; }
-#admin-table .adm-price { width: 52px; }
+#admin-table .adm-order { width: 32px; }
+#admin-table .adm-name  { width: 100%; min-width: 80px; }
+#admin-table .adm-price { width: 44px; }
 
 #admin-table select {
     padding: 5px;
