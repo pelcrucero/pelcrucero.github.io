@@ -133,6 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('admin-user').value = '';
         document.getElementById('admin-pass').value = '';
         document.getElementById('admin-error').textContent = '';
+        document.getElementById('admin-gh-token').value = localStorage.getItem('pelcrucero_gh_token') || '';
         setTimeout(() => document.getElementById('admin-user').focus(), 50);
     }
 
@@ -207,7 +208,7 @@ document.addEventListener('DOMContentLoaded', () => {
         tbody.lastElementChild.querySelector('.adm-name').focus();
     };
 
-    window.adminSave = function() {
+    window.adminSave = async function() {
         const arr = [];
         document.querySelectorAll('#admin-table-body tr').forEach(tr => {
             const name = tr.querySelector('.adm-name').value.trim();
@@ -224,22 +225,70 @@ document.addEventListener('DOMContentLoaded', () => {
             const items = arr.filter(p => p.category === cat).sort((a, b) => a.order - b.order);
             items.forEach((p, i) => { p.order = i + 1; });
         });
+
+        // Guardar token si se ha introducido
+        const token = document.getElementById('admin-gh-token').value.trim();
+        if (token) localStorage.setItem('pelcrucero_gh_token', token);
+
+        // Persistir localmente y refrescar la app
         localStorage.setItem('pelcrucero_products', JSON.stringify(arr));
         buildProductsFromArray(arr);
         renderProducts(currentTab);
-        showToast('Cambios guardados correctamente');
+
+        // Subir a GitHub si hay token
+        if (token) {
+            showToast('Subiendo a GitHub…', '#1e3d59');
+            const ok = await pushToGitHub(arr, token);
+            showToast(
+                ok ? 'Guardado y subido a GitHub ✓' : 'Error al subir a GitHub. Revisa el token.',
+                ok ? '#5cb85c' : '#d9534f'
+            );
+        } else {
+            showToast('Guardado localmente (sin token GitHub)');
+        }
     };
+
+    async function pushToGitHub(arr, token) {
+        const apiUrl = 'https://api.github.com/repos/pelcrucero/pelcrucero.github.io/contents/productos.json';
+        const headers = {
+            'Authorization': `Bearer ${token}`,
+            'Accept': 'application/vnd.github+json',
+            'X-GitHub-Api-Version': '2022-11-28'
+        };
+        try {
+            const getRes = await fetch(apiUrl, { headers });
+            if (!getRes.ok) return false;
+            const { sha } = await getRes.json();
+
+            const json = JSON.stringify(arr, null, 2);
+            const content = btoa(unescape(encodeURIComponent(json)));
+
+            const putRes = await fetch(apiUrl, {
+                method: 'PUT',
+                headers: { ...headers, 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    message: 'Actualizar productos desde panel de administración',
+                    content,
+                    sha
+                })
+            });
+            return putRes.ok;
+        } catch (_) {
+            return false;
+        }
+    }
 
     window.adminClose = function() {
         document.getElementById('admin-overlay').style.display = 'none';
     };
 
-    function showToast(msg) {
+    function showToast(msg, color = '#5cb85c') {
         const toast = document.createElement('div');
         toast.className = 'admin-toast';
+        toast.style.background = color;
         toast.textContent = msg;
         document.body.appendChild(toast);
-        setTimeout(() => toast.remove(), 2500);
+        setTimeout(() => toast.remove(), 3000);
     }
 
     document.getElementById('logo-admin-trigger').addEventListener('dblclick', openAdmin);

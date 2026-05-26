@@ -323,6 +323,33 @@ body {
     gap: 12px;
 }
 
+.admin-token-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    padding: 8px 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    font-size: 0.88em;
+}
+
+.admin-token-bar label {
+    white-space: nowrap;
+    font-weight: bold;
+    color: #555;
+}
+
+.admin-token-bar input {
+    flex: 1;
+    padding: 6px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.9em;
+    font-family: monospace;
+    box-sizing: border-box;
+}
+
 .admin-toolbar {
     display: flex;
     justify-content: space-between;
