@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <option value="bebida" ${p.category === 'bebida' ? 'selected' : ''}>Bebida</option>
                 </select>
             </td>
-            <td><button class="adm-delete" onclick="this.closest('tr').remove()" title="Eliminar">🗑️</button></td>
+            <td><button class="adm-delete" onclick="this.closest('tr').remove()" title="Eliminar"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/><path d="M9 6V4h6v2"/></svg></button></td>
         `;
         tr.querySelector('.adm-order').addEventListener('change', () => normalizeOrders(tr));
         return tr;
