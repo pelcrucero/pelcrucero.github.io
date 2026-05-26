@@ -1,0 +1,15 @@
+{
+  "name": "Peña El Crucero",
+  "short_name": "Crucero",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1e3d59",
+  "icons": [
+    {
+      "src": "logo2.png",
+      "sizes": "any",
+      "type": "image/png"
+    }
+  ]
+}
