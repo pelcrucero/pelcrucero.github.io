@@ -12,21 +12,17 @@
         <div class="branding">
             <img src="logo2.png" alt="Logo" class="logo">
             <h2>Peña El Crucero</h2>
-            <img src="logo2.png" alt="Logo" class="logo">
+            <img src="logo2.png" alt="Logo" class="logo" id="logo-admin-trigger">
         </div>
         <div class="tabs">
             <button class="tab-link tab-link-comida tab-selected" onclick="openTab('comida')">COMIDA</button>
             <button class="tab-link tab-link-bebida" onclick="openTab('bebida')">BEBIDA</button>
         </div>
-        <div id="comida" class="tab-content">
-            <!-- Productos de comida -->
-        </div>
-        <div id="bebida" class="tab-content" style="display: none;">
-            <!-- Productos de bebida -->
-        </div>
+        <div id="comida" class="tab-content"></div>
+        <div id="bebida" class="tab-content" style="display: none;"></div>
         <div class="payment-section">
             <div class="payment-info">
-                <div class="payment-label total-amount" style="color: #d9534f;" >Total</div>
+                <div class="payment-label total-amount" style="color: #d9534f;">Total</div>
                 <div class="payment-amount total-amount" style="color: #d9534f;" id="total-amount">0.00€</div>
             </div>
             <div class="payment-info">
@@ -39,9 +35,51 @@
             </div>
             <button id="reset-button" onclick="resetQuantities()">Borrar</button>
         </div>
-
- 
     </div>
+
+    <div id="admin-overlay">
+        <div id="admin-login">
+            <h3>Administración</h3>
+            <div class="admin-form-group">
+                <label>Usuario</label>
+                <input type="text" id="admin-user" placeholder="Usuario" autocomplete="off">
+            </div>
+            <div class="admin-form-group">
+                <label>Contraseña</label>
+                <input type="password" id="admin-pass" placeholder="Contraseña">
+            </div>
+            <div id="admin-error"></div>
+            <button class="admin-btn-primary" onclick="adminLogin()">Entrar</button>
+        </div>
+        <div id="admin-panel">
+            <div class="admin-token-bar">
+                <label for="admin-gh-token">Token GitHub</label>
+                <input type="password" id="admin-gh-token" placeholder="ghp_xxxxxxxxxxxx" autocomplete="off">
+            </div>
+            <div class="admin-toolbar">
+                <button class="admin-btn-secondary" onclick="adminAddItem()">+ Añadir</button>
+                <div class="admin-toolbar-right">
+                    <button class="admin-btn-primary" onclick="adminSave()">Guardar cambios</button>
+                    <button class="admin-btn-back" onclick="adminClose()">Volver</button>
+                </div>
+            </div>
+            <div class="admin-table-wrapper">
+                <table id="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Orden</th>
+                            <th>Nombre</th>
+                            <th>Precio (€)</th>
+                            <th>Categoría</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-table-body"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>

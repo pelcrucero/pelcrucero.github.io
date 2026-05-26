@@ -1,86 +1,15 @@
 [
-  {
-    "name": "Morcilla",
-    "price": 1.7,
-    "category": "comida",
-    "order": 1
-  },
-  {
-    "name": "Chorizo",
-    "price": 1.7,
-    "category": "comida",
-    "order": 2
-  },
-  {
-    "name": "Morro",
-    "price": 1.7,
-    "category": "comida",
-    "order": 3
-  },
-  {
-    "name": "Tortilla",
-    "price": 1.7,
-    "category": "comida",
-    "order": 4
-  },
-  {
-    "name": "Langostinos",
-    "price": 2.5,
-    "category": "comida",
-    "order": 5
-  },
-  {
-    "name": "Caña/Con Limón",
-    "price": 1.5,
-    "category": "bebida",
-    "order": 1
-  },
-  {
-    "name": "Vaso Calimocho",
-    "price": 2,
-    "category": "bebida",
-    "order": 2
-  },
-  {
-    "name": "Tinto de Verano",
-    "price": 2,
-    "category": "bebida",
-    "order": 3
-  },
-  {
-    "name": "Vino",
-    "price": 1.3,
-    "category": "bebida",
-    "order": 4
-  },
-  {
-    "name": "Vino Frizzante",
-    "price": 1.5,
-    "category": "bebida",
-    "order": 5
-  },
-  {
-    "name": "Cachi",
-    "price": 4.5,
-    "category": "bebida",
-    "order": 6
-  },
-  {
-    "name": "Refresco",
-    "price": 1.7,
-    "category": "bebida",
-    "order": 7
-  },
-  {
-    "name": "Mosto",
-    "price": 1,
-    "category": "bebida",
-    "order": 8
-  },
-  {
-    "name": "Agua",
-    "price": 1,
-    "category": "bebida",
-    "order": 9
-  }
+  { "name": "Morcilla",        "price": 1.7, "category": "comida", "order": 1 },
+  { "name": "Chorizo",         "price": 1.7, "category": "comida", "order": 2 },
+  { "name": "Morro",           "price": 1.7, "category": "comida", "order": 3 },
+  { "name": "Tortilla",        "price": 1.7, "category": "comida", "order": 4 },
+  { "name": "Langostinos",     "price": 2.5, "category": "comida", "order": 5 },
+  { "name": "Caña/Con Limón",  "price": 1.3, "category": "bebida", "order": 1 },
+  { "name": "Vaso Calimocho",  "price": 2.0, "category": "bebida", "order": 2 },
+  { "name": "Tinto de Verano", "price": 2.0, "category": "bebida", "order": 3 },
+  { "name": "Vino",            "price": 1.3, "category": "bebida", "order": 4 },
+  { "name": "Cachi",           "price": 4.5, "category": "bebida", "order": 5 },
+  { "name": "Refresco",        "price": 1.7, "category": "bebida", "order": 6 },
+  { "name": "Mosto",           "price": 1.0, "category": "bebida", "order": 7 },
+  { "name": "Agua",            "price": 1.0, "category": "bebida", "order": 8 }
 ]
