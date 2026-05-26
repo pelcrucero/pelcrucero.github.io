@@ -256,21 +256,24 @@ document.addEventListener('DOMContentLoaded', () => {
             'X-GitHub-Api-Version': '2022-11-28'
         };
         try {
+            // Obtener SHA si el fichero ya existe; si no existe (404) se crea nuevo
             const getRes = await fetch(apiUrl, { headers });
-            if (!getRes.ok) return false;
-            const { sha } = await getRes.json();
+            let sha = null;
+            if (getRes.ok) {
+                sha = (await getRes.json()).sha;
+            } else if (getRes.status !== 404) {
+                return false;
+            }
 
             const json = JSON.stringify(arr, null, 2);
             const content = btoa(unescape(encodeURIComponent(json)));
+            const body = { message: 'Actualizar productos desde panel de administración', content };
+            if (sha) body.sha = sha;
 
             const putRes = await fetch(apiUrl, {
                 method: 'PUT',
                 headers: { ...headers, 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    message: 'Actualizar productos desde panel de administración',
-                    content,
-                    sha
-                })
+                body: JSON.stringify(body)
             });
             return putRes.ok;
         } catch (_) {
